@@ -13,6 +13,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HeaderComponent } from './component/header/header.component';
 import { CustomerReportComponent } from './customer-report/customer-report.component';
 import { FilterreportPipe } from './customer-report/filterreport.pipe';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FilterreportPipe } from './customer-report/filterreport.pipe';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
     BrowserModule, 
     ReactiveFormsModule,
     AppRoutingModule
