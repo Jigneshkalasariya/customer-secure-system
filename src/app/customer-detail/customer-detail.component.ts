@@ -45,7 +45,7 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   cancel(){
-
+    this.router.navigateByUrl(`/`);
   }
 
 }

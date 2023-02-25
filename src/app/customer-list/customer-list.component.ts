@@ -25,10 +25,7 @@ export class CustomerListComponent implements OnInit {
   generateLink(item:any){
     if (item && item.id) {
       this.customerService.getToken(item.id).subscribe((data:any) => {
-        const url = this.router.serializeUrl(
-          this.router.createUrlTree([`/customer/${data.data}`])
-        );
-        window.open(url, '_blank');
+        this.router.navigateByUrl(`/customer/${data.data}`);
       });
       
     }
