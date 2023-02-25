@@ -1,0 +1,63 @@
+
+<app-header></app-header>
+<div class="text-center">
+    <h3>Customer Report</h3>
+</div>
+<div class="form-group filter_course">
+    <label class="label_course">Search</label>
+    <input type="text " name="search " autocomplete="off" [(ngModel)]="searchText"
+        class="form-control ng-untouched ng-pristine ng-valid form_width"
+        ng-reflect-name="search" />
+</div>
+<div class="table-responsive"> 
+    <table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Link open count(s)</th>
+            <th>Updated Name</th>
+            <th>Updated Phone</th>
+            <th>Updated Address</th>
+            <th>Created At</th>
+            <th>Modified At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of customerList | filterreport: searchText; let i =index;">
+            <td>
+                {{i+1}}
+            </td>
+            <td>
+                {{item.old_name}}
+            </td>
+            <td>
+                {{item.old_phone}}
+            </td>
+            <td>
+                {{item.old_address}}
+            </td>
+            <td>
+                {{item.open_link}}
+            </td>
+            <td>
+                {{item.new_name}}
+            </td>
+            <td>
+                {{item.new_phone}}
+            </td>
+            <td>
+                {{item.new_address}}
+            </td>
+            <td>
+                {{item.createdAt | date: 'MMM d, y, h:mm:ss a'}}
+            </td>
+            <td>
+                {{item.updatedAt | date: 'MMM d, y, h:mm:ss a'}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
